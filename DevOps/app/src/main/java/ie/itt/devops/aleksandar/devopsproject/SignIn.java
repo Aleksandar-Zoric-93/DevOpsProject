@@ -14,6 +14,11 @@ import android.widget.Toast;
  * Created by Alex on 19/02/2017.
  */
 
+/*
+* Refactored From:
+* https://drive.google.com/file/d/0B41RrECzQWB6anV2UHo1bnFjcVE/view
+* */
+
 public class SignIn extends AppCompatActivity {
     Intent i=null;
     ImageView im=null;
