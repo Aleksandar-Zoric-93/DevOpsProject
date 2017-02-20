@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -18,36 +19,50 @@
         android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/sign_in"
+            android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Sign In"
-             />
+            android:text="Register"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/background_light" />
 
         <Button
-            android:id="@+id/log_in"
+            android:id="@+id/loginBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="20sp"
 
-            android:text="Log In" />
+            android:text="Log In"
+            android:background="@android:color/holo_green_dark"
+            android:textColor="@android:color/background_light" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/homeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="#CCCCCC"
-        android:text=" Welcome "
+        android:background="@android:color/background_light"
+        android:text="Home"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#333333"
-        android:textSize="25sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="64dp"
+        android:id="@+id/appLogoImg"
+        android:layout_height="250dp"
+        android:layout_below="@+id/homeLbl"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

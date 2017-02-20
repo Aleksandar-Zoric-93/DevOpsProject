@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -20,8 +21,7 @@ import android.widget.Toast;
 * https://drive.google.com/file/d/0B41RrECzQWB6anV2UHo1bnFjcVE/view
 * */
 
-public class LogMeIn extends AppCompatActivity {
-    Intent i=null;
+public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
     ImageView im=null;
     EditText tv1,tv4;
     boolean flag=false;
@@ -30,10 +30,18 @@ public class LogMeIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        im=(ImageView)findViewById(R.id.show_hide2);
-        tv1=(EditText)findViewById(R.id.phone2);
-        tv4=(EditText)findViewById(R.id.password2);
+        im=(ImageView)findViewById(R.id.login_show_hideBtn);
+        tv1=(EditText)findViewById(R.id.mobileLoginFld);
+        tv4=(EditText)findViewById(R.id.passwordLoginFld);
         db=openOrCreateDatabase("mydb", MODE_PRIVATE, null);
+
+       /* Button registerBtn;
+        registerBtn = (Button) findViewById(R.id.registerBtn);
+        registerBtn.setOnClickListener(this);*/
+
+        Button confirmLoginBtn;
+        confirmLoginBtn = (Button) findViewById(R.id.confirmLoginBtn);
+        confirmLoginBtn.setOnClickListener(this);
         //	db.execSQL("create table if not exists login(name varchar,mobile_no varchar,email_id varchar,password varchar,flag varchar)");
 
         im.setOnClickListener(new View.OnClickListener() {
@@ -57,17 +65,17 @@ public class LogMeIn extends AppCompatActivity {
         });
     }
 
-    public void action(View v)
+    public void onClick(View v)
     {
         switch(v.getId())
         {
-            case R.id.signin2:
-                i=new Intent(this,SignIn.class);
-                startActivityForResult(i, 500);
+            /*case R.id.loginLbl:
+                Intent registerIntent =new Intent(getApplicationContext(),Register.class);
+                startActivity(registerIntent);
                 overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
                 finish();
-                break;
-            case R.id.start:
+                break;*/
+            case R.id.confirmLoginBtn:
                 String mobile_no=tv1.getText().toString();
                 String password=tv4.getText().toString();
                 if(mobile_no==null||mobile_no==""||mobile_no.length()<10)
@@ -80,12 +88,13 @@ public class LogMeIn extends AppCompatActivity {
                 }
                 else
                 {
-                    Cursor c=db.rawQuery("select * from login where mobile_no='"+mobile_no+"' and password='"+password+"'",null);
+                    Cursor c=db.rawQuery("select * from Members where memberMobile_no='"+mobile_no+"' and memberPassword='"+password+"'",null);
+
                     c.moveToFirst();
                     if(c.getCount()>0)
                     {
-                        i=new Intent(this,Welcome.class);
-                        startActivityForResult(i,500);
+                        Intent welcomeIntent=new Intent(getApplicationContext(),Welcome.class);
+                        startActivity(welcomeIntent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         db.close();
                         finish();

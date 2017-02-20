@@ -4,34 +4,71 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/loginLbl"
+        android:id="@+id/registerLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@android:color/background_light"
-        android:text="Login"
+        android:text="Register"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorPrimary"
         android:textSize="40sp"
         android:layout_marginTop="16dp" />
 
-    <RelativeLayout
-        android:id="@+id/rl"
+    <EditText
+        android:id="@+id/registerEmailFld"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/mobileLoginFld"
-        android:layout_alignRight="@+id/mobileLoginFld"
+        android:layout_alignLeft="@+id/registerMobileFld"
         android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Email id"
+        android:maxLength="40"
+        android:inputType="textEmailAddress" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/registerMobileFld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registerEmailFld"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:maxLength="10"
+        android:hint="Mobile No."
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/registerNameFld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registerMobileFld"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:maxLength="30"
+        android:hint="Name"
+        android:inputType="textPersonName">
+        <requestFocus />
+    </EditText>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/registerEmailFld"
+        android:layout_alignRight="@+id/registerEmailFld"
+        android:layout_below="@+id/registerEmailFld"
         android:addStatesFromChildren="true"
         android:background="@android:drawable/edit_text"
         android:baselineAligned="false"
+        android:id="@+id/rl"
         android:gravity="center_vertical" >
 
         <ImageView
-            android:id="@+id/login_show_hideBtn"
+            android:id="@+id/register_show_hideBtn"
             style="@android:style/Widget.Button.Inset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,13 +80,13 @@
             />
 
         <EditText
-            android:id="@+id/passwordLoginFld"
+            android:id="@+id/registerPasswordFld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/rl"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/login_show_hideBtn"
+            android:layout_toLeftOf="@+id/register_show_hideBtn"
             android:background="@null"
             android:ems="10"
             android:maxLength="40"
@@ -62,31 +99,17 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:id="@+id/mobileLoginFld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/rl"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Mobile No."
-        android:maxLength="10"
-        android:inputType="phone" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
-        android:id="@+id/confirmLoginBtn"
+        android:id="@+id/confirmRegisterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/rl"
         android:layout_alignRight="@+id/rl"
         android:layout_below="@+id/rl"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:text="Register"
         android:onClick="action"
-        android:text="Log In"
+        android:textSize="20sp"
         android:background="@android:color/holo_green_dark" />
 
 </RelativeLayout>

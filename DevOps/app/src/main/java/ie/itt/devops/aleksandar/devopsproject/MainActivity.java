@@ -1,5 +1,6 @@
 package ie.itt.devops.aleksandar.devopsproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,19 +14,19 @@ import android.widget.Toast;
 * */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button loginBtn;
-        loginBtn = (Button) findViewById(R.id.log_in);
+        loginBtn = (Button) findViewById(R.id.loginBtn);
         loginBtn.setOnClickListener(this);
 
         Button signinBtn;
-        signinBtn = (Button) findViewById(R.id.sign_in);
+        signinBtn = (Button) findViewById(R.id.registerBtn);
         signinBtn.setOnClickListener(this);
-
     }
 
 
@@ -33,16 +34,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         switch(v.getId())
         {
-            case R.id.log_in:
+            case R.id.loginBtn:
                 Intent intent2=new Intent(getApplicationContext(),LogMeIn.class);
-                Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
                 startActivity(intent2);
 
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
 
-            case R.id.sign_in:
-                Intent intent=new Intent(getApplicationContext(),SignIn.class);
+            case R.id.registerBtn:
+                Intent intent=new Intent(getApplicationContext(),Register.class);
                 startActivity(intent);
 
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);;
