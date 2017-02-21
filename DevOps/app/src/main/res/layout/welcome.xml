@@ -7,12 +7,39 @@
         android:id="@+id/welcomeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/background_light"
         android:text="Welcome"
         android:gravity="center"
-        android:background="@android:color/background_light"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignParentTop="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:text="Get Motivated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/getMotivatedBtn"
+        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/background_light"
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:id="@+id/quoteView"
+        android:textSize="25sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_below="@+id/welcomeLbl"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:gravity="center" />
 
 </RelativeLayout>
