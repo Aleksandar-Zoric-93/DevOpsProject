@@ -119,4 +119,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     {
         Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
+
+    public void insertIntoDatabase()
+    {
+
+    }
 }

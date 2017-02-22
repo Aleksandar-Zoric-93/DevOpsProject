@@ -65,28 +65,32 @@ public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+    public boolean validationMobNumPassword(String mobile, String password)
+    {
+        if(mobile==null||mobile==""||mobile.length()<10)
+        {
+            show("Please Enter Correct mobile number.");
+            return false;
+        }
+        else if(password==null||password==""||password.length()<6)
+        {
+            show("Please Enter Correct Password.");
+            return false;
+        }
+
+        return true;
+    }
+
+
     public void onClick(View v)
     {
         switch(v.getId())
         {
-            /*case R.id.loginLbl:
-                Intent registerIntent =new Intent(getApplicationContext(),Register.class);
-                startActivity(registerIntent);
-                overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
-                finish();
-                break;*/
             case R.id.confirmLoginBtn:
                 String mobile_no=tv1.getText().toString();
                 String password=tv4.getText().toString();
-                if(mobile_no==null||mobile_no==""||mobile_no.length()<10)
-                {
-                    show("Please Enter Correct mobile number.");
-                }
-                else if(password==null||password==""||password.length()<6)
-                {
-                    show("Please Enter Correct Password.");
-                }
-                else
+
+                if(validationMobNumPassword(mobile_no, password) == true)
                 {
                     Cursor c=db.rawQuery("select * from Members where memberMobile_no='"+mobile_no+"' and memberPassword='"+password+"'",null);
 
