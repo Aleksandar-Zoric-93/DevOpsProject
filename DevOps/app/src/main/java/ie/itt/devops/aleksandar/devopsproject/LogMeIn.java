@@ -35,14 +35,11 @@ public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
         tv4=(EditText)findViewById(R.id.passwordLoginFld);
         db=openOrCreateDatabase("mydb", MODE_PRIVATE, null);
 
-       /* Button registerBtn;
-        registerBtn = (Button) findViewById(R.id.registerBtn);
-        registerBtn.setOnClickListener(this);*/
+
 
         Button confirmLoginBtn;
         confirmLoginBtn = (Button) findViewById(R.id.confirmLoginBtn);
         confirmLoginBtn.setOnClickListener(this);
-        //	db.execSQL("create table if not exists login(name varchar,mobile_no varchar,email_id varchar,password varchar,flag varchar)");
 
         im.setOnClickListener(new View.OnClickListener() {
             @Override

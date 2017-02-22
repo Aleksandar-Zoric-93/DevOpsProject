@@ -1,5 +1,8 @@
 package ie.itt.devops.aleksandar.devopsproject;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.test.RenamingDelegatingContext;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

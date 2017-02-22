@@ -25,7 +25,7 @@
         android:layout_alignLeft="@+id/registerMobileFld"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:hint="Email id"
+        android:hint="Email "
         android:maxLength="40"
         android:inputType="textEmailAddress" >
 

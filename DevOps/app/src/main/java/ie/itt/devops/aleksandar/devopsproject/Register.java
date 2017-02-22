@@ -66,38 +66,43 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         });
     }
 
+    public boolean validateRegistrationForm(String name, String mobile, String email, String password)
+    {
+        if(name==null||name==""||name.length()<3)
+        {
+            show("Please Enter Correct Name.");
+            return false;
+        }
+        else if(mobile==null||mobile==""||mobile.length()<10)
+        {
+            show("Please Enter Correct mobile number.");
+            return false;
+        }
+        else if(email==null||email==""||email.length()<10)
+        {
+            show("Please Enter Correct Email id.");
+            return false;
+        }
+        else if(password==null||password==""||password.length()<6)
+        {
+            show("Please Enter Strong Password.");
+            return false;
+        }
+        return true;
+    }
+
+
     public void onClick(View v)
     {
         switch(v.getId())
         {
-           /* case R.id.loginLbl:
-                Intent loginIntent =new Intent(getApplicationContext(),LogMeIn.class);
-                startActivity(loginIntent);
-                overridePendingTransition(R.anim.slide_in_top, R.anim.slide_out_bottom);
-                finish();
-                break;*/
             case R.id.confirmRegisterBtn:
                 String name=tv1.getText().toString();
                 String email_id=tv2.getText().toString();
                 String mobile_no=tv3.getText().toString();
                 String password=tv4.getText().toString();
-                if(name==null||name==""||name.length()<3)
-                {
-                    show("Please Enter Correct Name.");
-                }
-                else if(mobile_no==null||mobile_no==""||mobile_no.length()<10)
-                {
-                    show("Please Enter Correct mobile number.");
-                }
-                else if(email_id==null||email_id==""||email_id.length()<10)
-                {
-                    show("Please Enter Correct Email id.");
-                }
-                else if(password==null||password==""||password.length()<6)
-                {
-                    show("Please Enter Strong Password.");
-                }
-                else
+
+                if(validateRegistrationForm(name,mobile_no,email_id,password) ==true)
                 {
                     db.execSQL("insert into Members values('"+name+"','"+mobile_no+"','"+email_id+"','"+password+"','nothing')");
                     Intent welcomeIntent=new Intent(getApplicationContext(),Welcome.class);
@@ -120,8 +125,4 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 
-    public void insertIntoDatabase()
-    {
-
-    }
 }
