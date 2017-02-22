@@ -1,5 +1,7 @@
 package ie.itt.devops.aleksandar.devopsproject;
 
+import android.widget.EditText;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -24,5 +26,4 @@ public class RegisterTest {
         assertEquals(expected,output);
 
     }
-
 }

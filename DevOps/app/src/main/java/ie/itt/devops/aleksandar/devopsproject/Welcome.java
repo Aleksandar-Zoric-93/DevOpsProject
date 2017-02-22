@@ -32,28 +32,41 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener {
         getMotivatedBtn = (Button) findViewById(R.id.getMotivatedBtn);
         getMotivatedBtn.setOnClickListener(this);
 
+        TextView timeView;
+        timeView = (TextView) findViewById(R.id.timeView);
+
+        timeView.setText(getCurrentTime());
+
     }
 
+    public String getCurrentTime()
+    {
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        return currentDateTimeString;
+    }
+
+    public String generateMotivationalQuotes()
+    {
+        //Select Quote
+        String[] strs = new String[] {"quote_1", "quote_2", "quote_3","quote_4","quote_5","quote_6",
+                "quote_7", "quote_8", "quote_9","quote_10", "quote_11"};
+
+        int randomIndex = new Random().nextInt(3);
+        int resId = getResources().getIdentifier(strs[randomIndex ], "string", "ie.itt.devops.aleksandar.devopsproject");
+        String randomString = getString(resId);
+
+        return randomString;
+
+    }
     @Override
     public void onClick(View v) {
         switch(v.getId())
         {
             case R.id.getMotivatedBtn:
-
-                //Select Quote
-                String[] strs = new String[] {"quote_1", "quote_2", "quote_3","quote_4","quote_5","quote_6",
-                        "quote_7", "quote_8", "quote_9","quote_10", "quote_11"};
-
-                int randomIndex = new Random().nextInt(3);
-                int resId = getResources().getIdentifier(strs[randomIndex ], "string", "ie.itt.devops.aleksandar.devopsproject");
-                String randomString = getString(resId);
-
-
                 TextView quoteView;
                 quoteView = (TextView) findViewById(R.id.quoteView);
 
-                quoteView.setText(randomString);
-
+                quoteView.setText(generateMotivationalQuotes());
                 break;
 
         }

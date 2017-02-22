@@ -25,9 +25,4 @@ public class LogMeInTest {
 
     }
 
-    @Test
-    public void onClick() throws Exception {
-
-    }
-
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -34,12 +35,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:id="@+id/quoteView"
         android:textSize="25sp"
         android:textColor="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:layout_above="@+id/getMotivatedBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="161dp" />
+
+    <TextView
+        android:text="Your time is now!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeLbl"
         android:layout_centerHorizontal="true"
-        android:gravity="center" />
+        android:layout_marginTop="14dp"
+        android:id="@+id/yourTimeLbl"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <TextView
+        android:text="Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeView"
+        android:textColor="?attr/actionMenuTextColor"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/yourTimeLbl"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp" />
 
 </RelativeLayout>

@@ -112,4 +112,20 @@
         android:textSize="20sp"
         android:background="@android:color/holo_green_dark" />
 
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Clear"
+        android:onClick="action"
+        android:textSize="20sp"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/confirmRegisterBtn"
+        android:layout_alignEnd="@+id/confirmRegisterBtn"
+        android:layout_alignLeft="@+id/confirmRegisterBtn"
+        android:layout_alignStart="@+id/confirmRegisterBtn"
+        android:textColor="@android:color/background_light" />
+
 </RelativeLayout>

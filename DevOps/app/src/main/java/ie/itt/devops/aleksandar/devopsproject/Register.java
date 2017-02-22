@@ -37,13 +37,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         db=openOrCreateDatabase("mydb", MODE_PRIVATE, null);
         db.execSQL("create table if not exists Members(memberName varchar,memberMobile_no varchar,memberEmail_id varchar,memberPassword varchar,memberFlag varchar)");
 
-       /* Button loginBtn;
-        loginBtn = (Button) findViewById(R.id.loginBtn);
-        loginBtn.setOnClickListener(this);*/
-
         Button confirmRegistrationBtn;
         confirmRegistrationBtn = (Button) findViewById(R.id.confirmRegisterBtn);
         confirmRegistrationBtn.setOnClickListener(this);
+
+        Button clearBtn;
+        clearBtn = (Button) findViewById(R.id.clearBtn);
+        clearBtn.setOnClickListener(this);
 
         im.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +64,32 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 }
             }
         });
+    }
+
+    public boolean clearAllFields(EditText input1, EditText input2, EditText input3, EditText input4)
+    {
+        input1.equals(tv1);
+        input2.equals(tv2);
+        input3.equals(tv3);
+        input4.equals(tv4);
+
+        input1.setText("");
+        input2.setText("");
+        input3.setText("");
+        input4.setText("");
+
+        if(input1.equals("") && input2.equals("") && input3.equals("") && input4.equals(""))
+        {
+            Toast.makeText(this, "Unknown Problem Occured", Toast.LENGTH_LONG).show();
+            return true;
+        }
+        else
+        {
+            Toast.makeText(this, "All Fields Cleared", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+
     }
 
     public boolean validateRegistrationForm(String name, String mobile, String email, String password)
@@ -112,6 +138,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     finish();
                     Toast.makeText(this, "Member Registered Successfully", Toast.LENGTH_LONG).show();
                 }
+                break;
+
+            case R.id.clearBtn:
+                clearAllFields(tv1,tv2,tv3,tv4);
                 break;
         }
     }
