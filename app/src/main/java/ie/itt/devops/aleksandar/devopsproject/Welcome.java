@@ -39,6 +39,7 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+	//Gets the current time and returns it as a String
     public String getCurrentTime()
     {
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
