@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+	//This method handles what happens when a button is clicked
     public void onClick(View v)
     {
         switch(v.getId())
