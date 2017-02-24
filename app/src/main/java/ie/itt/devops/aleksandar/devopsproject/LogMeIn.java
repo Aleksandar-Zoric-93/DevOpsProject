@@ -62,6 +62,7 @@ public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+	//Validates the mobile number and password entered by the user
     public boolean validationMobNumPassword(String mobile, String password)
     {
         if(mobile==null||mobile==""||mobile.length()<10)
