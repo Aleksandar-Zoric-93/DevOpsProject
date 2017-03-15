@@ -5,6 +5,8 @@ a automated pipeline will be created via TeamCity and a few other technologies t
 What will be demonstrated is Continues Integration, Automated Testing and Continues Deployment using these tools.
 Also some basic statistics will be displayed such as Code Coverage.
 
+<b>Example:</b>
+
 ![Sample Pipeline](http://www.bogotobogo.com/DevOps/images/DevOps/PipeLIne/CI_EC2.png)
 
 
