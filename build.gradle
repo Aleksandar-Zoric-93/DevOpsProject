@@ -36,4 +36,31 @@ tasks.withType(JavaCompile) {
 }
 
 
+task jacocoTestReport(type: JacocoReport, dependsOn: "testDebug") {
+    group = "Reporting"
+
+    description = "Generate Jacoco coverage reports"
+
+    classDirectories = fileTree(
+            dir: '../app/build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+
+
+    executionData = files('../app/build/jacoco/testDebug.exec')
+    if (project.hasProperty("teamcity")) {
+        println '##teamcity[jacocoReport dataPath=\'app/build/jacoco/testDebug.exec\' includes=\'ie.itt.devops.aleksandar.devopsproject.*\' excludes=\'**/R.class **/R$*.class **/*$ViewInjector*.* **/BuildConfig.* **/Manifest*.*\']'
+    }
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+}
+
 
