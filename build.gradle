@@ -23,9 +23,9 @@ allprojects {
 
 
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//task clean(type: Delete) {
+   // delete rootProject.buildDir
+//}
 
 tasks.withType(JavaCompile) {
     //enable compilation in a separate daemon process
