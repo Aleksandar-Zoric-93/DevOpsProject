@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class RegisterTest {
     @Test
     public void validateRegistrationForm() throws Exception {
-        String nameInput = "Joe Bloggs";
+        String nameInput = "Joe Doe";
         String mobileInput = "0856743426";
         String emailInput = "thisismyemail@hotmail.com";
         String passwordInput = "password321";

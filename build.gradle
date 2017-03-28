@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: 'java'
+
+
+
 buildscript {
     repositories {
         jcenter()
@@ -13,6 +16,7 @@ buildscript {
     }
 }
 
+
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 allprojects {
@@ -20,6 +24,8 @@ allprojects {
         jcenter()
     }
 }
+
+task stage(dependsOn: ['clean', 'installApp'])
 
 
 

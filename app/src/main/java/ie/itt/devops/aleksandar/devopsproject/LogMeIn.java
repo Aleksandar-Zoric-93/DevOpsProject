@@ -37,6 +37,7 @@ public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
 
 
 
+        //Test comment
         Button confirmLoginBtn;
         confirmLoginBtn = (Button) findViewById(R.id.confirmLoginBtn);
         confirmLoginBtn.setOnClickListener(this);
