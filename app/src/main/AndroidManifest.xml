@@ -18,6 +18,7 @@
         <activity android:name=".LogMeIn"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".Welcome"></activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="40a3002a1a87f78e6b3d0cff76faf9af61760427" />
