@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MotivateMe</string>
+    <string name="myAppKey">40a3002a1a87f78e6b3d0cff76faf9af61760427</string>
 
     <string name="quote_1">Whatever the mind of man can conceive and believe, it can achieve. –Napoleon Hill</string>
     <string name="quote_2">Strive not to be a success, but rather to be of value. –Albert Einstein</string>
