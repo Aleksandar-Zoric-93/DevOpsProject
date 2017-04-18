@@ -1,7 +1,6 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
-        maven { url 'http://download.crashlytics.com/maven' }
     }
 
     dependencies {
@@ -10,7 +9,6 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
-apply plugin: 'crashlytics'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
