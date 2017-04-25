@@ -26,6 +26,7 @@ public class LogMeIn extends AppCompatActivity implements View.OnClickListener {
     EditText tv1,tv4;
     boolean flag=false;
     SQLiteDatabase db=null;
+    //OnCreate method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
